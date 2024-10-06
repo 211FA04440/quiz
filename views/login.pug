@@ -1,0 +1,134 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Login
+    style.
+      /* General body styles */
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          display: grid;
+          grid-template-rows: auto 1fr auto;
+          min-height: 100vh;
+      }
+
+      /* Header styling */
+      header {
+          background-color: #2E8B57;
+          color: white;
+          text-align: center;
+          padding: 15px 0;
+      }
+
+      nav ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+      }
+
+      nav ul li {
+          margin: 0 15px;
+      }
+
+      nav a {
+          color: white;
+          text-decoration: none;
+      }
+
+      /* Main layout */
+      main {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #f4f4f4;
+          padding: 20px;
+      }
+
+      /* Form layout using Flexbox */
+      form {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: stretch;
+          background-color: white;
+          padding: 30px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          width: 300px;
+      }
+
+      label {
+          margin-bottom: 10px;
+          font-weight: bold;
+      }
+
+      input[type="email"],
+      input[type="password"] {
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+
+      button {
+          padding: 10px;
+          background-color: violet;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-bottom: 10px;
+      }
+
+      button:hover {
+          background-color: violet;
+      }
+
+      a {
+          text-align: center;
+          color: violet;
+          text-decoration: none;
+          margin-top: 10px;
+      }
+
+      a:hover {
+          text-decoration: underline;
+      }
+
+      /* Footer styling */
+      footer {
+          background-color: #2E8B57;
+          color: white;
+          text-align: center;
+          padding: 10px;
+      }
+  body
+    header
+      h1 Website Name
+      nav
+        ul
+          li: a(href="Home.html") Home
+          li: a(href="Register.html") Register
+          li: a(href="Login.html") Login
+          li: a(href="Aboutus.html") About Us
+    main
+      section
+        h2 Login
+        form#loginForm(action="/login_in", method="post")
+          label(for="login-email") Email:
+          input(type="email", id="login-email", name="id", required)
+          label(for="login-password") Password:
+          input(type="password", id="login-password", name="password", required)
+          button(type="submit") Login
+          div#login-error #{error}
+          p
+            a(href="/register", style="color: blue") Register Here
+    footer
+      p Contact us at info@website.com
+    script(src="./assets/js/script.js", defer)
