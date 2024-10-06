@@ -1,0 +1,128 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Dashboard
+    style.
+      /* General resets */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body styling */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #2E8B57;
+      }
+
+      /* Header styling */
+      header {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      header h1 {
+        font-size: 2em;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2em;
+      }
+
+      nav ul li a:hover {
+        color: #FFD700;
+      }
+
+      /* Main section styling */
+      main {
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Table styling */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background-color: white;
+      }
+
+      table th, table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+
+      table th {
+        background-color: #007BFF;
+        color: white;
+      }
+
+      table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      table tr:hover {
+        background-color: #ddd;
+      }
+
+      /* Footer styling */
+      footer {
+        text-align: center;
+        background-color: #007BFF;
+        color: white;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+  body
+    header
+      h1 Website Name
+      nav
+        ul
+          li: a(href="index.html") Home
+          li: a(href="register.html") Register
+          li: a(href="login.html") Login
+          li: a(href="about.html") About Us
+    main
+      section
+        h2 Dashboard
+        table#userData
+          thead
+            tr
+              th Name
+              th Email
+          tbody
+            tr
+              td John Doe
+              td john@example.com
+            // More rows can be added dynamically
+    footer
+      p Contact us at info@website.com
