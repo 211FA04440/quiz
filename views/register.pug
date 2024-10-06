@@ -1,0 +1,154 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Register
+    style.
+      /* General body styles */
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+      }
+
+      /* Header styles */
+      header {
+          background-color: #2E8B57;
+          color: white;
+          padding: 10px 0;
+          text-align: center;
+      }
+
+      nav ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+      }
+
+      nav ul li {
+          display: inline;
+          margin: 0 15px;
+      }
+
+      nav a {
+          color: white;
+          text-decoration: none;
+      }
+
+      /* Form and input styles */
+      main {
+          padding: 20px;
+          text-align: center;
+      }
+
+      form {
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 20px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          background-color: #f9f9f9;
+      }
+
+      fieldset {
+          border: none;
+          padding: 0;
+          margin: 0;
+      }
+
+      legend {
+          font-size: 1.5em;
+          margin-bottom: 10px;
+      }
+
+      label {
+          display: block;
+          margin: 10px 0 5px;
+          font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      select {
+          width: 100%;
+          padding: 8px;
+          margin: 5px 0 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+
+      button {
+          padding: 10px 20px;
+          margin: 10px 5px;
+          border: none;
+          border-radius: 4px;
+          color: white;
+          background-color: violet;
+          cursor: pointer;
+      }
+
+      button:hover {
+          background-color: violet;
+      }
+
+      /* Footer styles */
+      footer {
+          background-color: #2E8B57;
+          color: white;
+          padding: 10px;
+          text-align: center;
+      }
+
+      /* Message styling */
+      #successMessage {
+          color: green;
+          font-size: 1.2em;
+          margin-top: 20px;
+          display: none;
+      }
+  body
+    header
+      h1 Website Name
+      nav
+        ul
+          li: a(href="Home.html") Home
+          li: a(href="Register.html") Register
+          li: a(href="Login.html") Login
+          li: a(href="Aboutus.html") About Us
+    main
+      section
+        h2 Register
+        form#registerForm(action="/register_in", method="post")
+          fieldset
+            legend Registration Form
+            label(for="name") Full Name:
+            input(type="text", id="name", name="name", required)
+            
+            label(for="email") Email:
+            input(type="email", id="register-email", name="email", required)
+            
+            label(for="gender") Gender:
+            select(id="gender", name="gender", required)
+              option(value="", disabled, selected) Select your gender
+              option(value="male") Male
+              option(value="female") Female
+              option(value="other") Other
+            
+            label(for="password") Password:
+            input(type="password", id="password", name="password", required)
+            
+            button(type="submit") Submit
+            button(type="reset") Reset
+        p#successMessage Your data is submitted!
+    footer
+      p Contact us at info@website.com
+    script.
+      document.getElementById("registerForm").addEventListener("submit", function(event) {
+          event.preventDefault(); // Prevent the default form submission behavior
+          // Show success message
+          document.getElementById("successMessage").style.display = "block";
+          // Optionally, reset the form after submission
+          document.getElementById("registerForm").reset();
+      });
